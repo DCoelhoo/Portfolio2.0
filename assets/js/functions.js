@@ -298,3 +298,37 @@ function playGame(playerChoice) {
 
   document.getElementById('game-result').innerText = `I chose ${computerChoice}. ${result}`;
 }
+
+ const form = document.getElementById('contact-form');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const data = {
+      name: form.name.value,
+      email: form.email.value,
+      message: form.message.value,
+    };
+
+    try {
+      const response = await fetch('https://formspree.io/f/xldbwnqk', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+      });
+
+      if (response.ok) {
+        alert('Message sent successfully!');
+        form.reset();
+      } else {
+        const result = await response.json();
+        console.error('Formspree error:', result);
+        alert('Submission failed: ' + (result.error || 'unknown error'));
+      }
+    } catch (err) {
+      console.error('Request error:', err);
+      alert('Network error occurred');
+    }
+  });
