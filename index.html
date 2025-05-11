@@ -3,11 +3,6 @@
   <head>
     <title>Portfolio</title>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="description" content="HTML5 website template" />
-    <meta name="keywords" content="global, template, html, sass, jquery" />
-    <meta name="author" content="Bucky Maler" />
     <link rel="stylesheet" href="assets/css/main.css" />
   </head>
   <body>
@@ -29,7 +24,7 @@
         <div id="viewport" class="l-viewport">
           <div class="l-wrapper">
             <header class="header">
-              <a class="header--logo" href="#0">
+              <a class="header--logo" href="index.html">
                 <img src="assets/img/logo.png" alt="Global" />
                 <p>Portfolio</p>
               </a>
@@ -93,7 +88,8 @@
                       <p></p>
                     </a>
                     <a
-                      onclick="window.open('files/ENGResume_2024.pdf', '_blank')"
+                      onclick="window.open('assets/files/ResumeDG.pdf', '_blank')"
+                      style="cursor: pointer;"
                     >
                       <h3>Resume</h3>
                       <p></p>
@@ -110,14 +106,15 @@
                         <a href="#0">
                           <div class="slider--item-image">
                             <img
-                              src="assets/img/work-victory.jpg"
-                              alt="Victory"
+                              src="assets/img/password-manager.png"
+                              alt="Password Manager"
                             />
                           </div>
-                          <p class="slider--item-title">Victory</p>
+                          <p class="slider--item-title">Password Manager</p>
                           <p class="slider--item-description">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing
-                            elit sed do.
+                            A complete CLI password manager that allows users to store and
+                            manage their passwords securely. It uses Fernet encryption and a telegram bot that notifies everything.
+                            It also sends backups of everything to user's email.
                           </p>
                         </a>
                       </li>
@@ -148,7 +145,7 @@
                           <div class="slider--item-image">
                             <img
                               src="assets/img/telegram_logo.webp"
-                              alt="Alex Nowak"
+                              alt="Telegram Bot"
                             />
                           </div>
                           <p class="slider--item-title">Telegram Bot</p>
@@ -237,14 +234,11 @@
                     <img src="assets/img/about-visual.png" alt="About Us" />
                   </div>
                   <div class="about--options">
-                    <a href="#0">
+                    <a href="education.html">
                       <h3>Education</h3>
                     </a>
-                    <a href="#0">
+                    <a href="experience.html">
                       <h3>Experience</h3>
-                    </a>
-                    <a href="#0">
-                      <h3>History</h3>
                     </a>
                   </div>
                 </div>
@@ -252,15 +246,36 @@
               <li class="l-section section">
                 <div class="error">
                   <div class="error--lockup">
-                  <h2>Oops! Perdeste-te?</h2>
-                  <p>Esta não é uma página de erro… é um desafio!</p>
-                  <p>Vamos jogar pedra-papel-tesoura</p>
-                  <div class="game-buttons">
-                    <button onclick="playGame('rock')">Rock</button>
-                    <button onclick="playGame('paper')">Paper</button>
-                    <button onclick="playGame('scissors')">Scissors</button>
-                  </div>
-                  <p id="game-result" style="margin-top: 20px;"></p>
+                    <div class="error--banner">
+                      <div class="error-banner-content">
+                        <h2>
+                          Oops!<br />This is not an error page.<br />Chill out,
+                          let's play!
+                        </h2>
+                        <a href="error.html">
+                          <dotlottie-player
+                            src="https://lottie.host/363312c6-15c7-41ce-b705-d258bc7aeadb/k6Kcu9NYxk.lottie"
+                            background="transparent"
+                            speed="1"
+                            style="width: 300px; height: 300px"
+                            loop
+                            autoplay
+                          ></dotlottie-player>
+                        </a>
+                      </div>
+                      <p id="game-result" style="margin-top: 20px; font-size: 20px;"></p>
+                    </div>
+                    <div class="error--options">
+                      <a class="game-button" onclick="playGame('rock')">
+                        <h3>Rock</h3>
+                      </a>
+                      <a class="game-button" onclick="playGame('paper')">
+                        <h3>Paper</h3>
+                      </a>
+                      <a class="game-button" onclick="playGame('scissors')">
+                        <h3>Scissors</h3>
+                      </a>
+                    </div>
                   </div>
                 </div>
               </li>
@@ -377,7 +392,6 @@
         <li>Works</li>
         <li>About</li>
         <li>Error</li>
-        <li>error</li>
         <li>Hire Me</li>
       </ul>
     </div>
@@ -390,5 +404,10 @@
         );
     </script>
     <script src="assets/js/functions-min.js"></script>
+    <script src="assets/js/functions.js"></script>
+    <script
+      src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs"
+      type="module"
+    ></script>
   </body>
 </html>
