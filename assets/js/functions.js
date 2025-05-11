@@ -278,3 +278,23 @@ $( document ).ready(function() {
   transitionLabels();
 
 });
+
+function playGame(playerChoice) {
+    const choices = ['rock', 'paper', 'scissors'];
+    const computerChoice = choices[Math.floor(Math.random() * choices.length)];
+    let result = '';
+
+    if (playerChoice === computerChoice) {
+      result = "Empate! 😐";
+    } else if (
+      (playerChoice === 'rock' && computerChoice === 'scissors') ||
+      (playerChoice === 'paper' && computerChoice === 'rock') ||
+      (playerChoice === 'scissors' && computerChoice === 'paper')
+    ) {
+      result = `Ganhaste! 🏆 (${playerChoice} vence ${computerChoice})`;
+    } else {
+      result = `Perdeste! 😢 (${computerChoice} vence ${playerChoice})`;
+    }
+
+    document.getElementById('game-result').innerText = result;
+  }
